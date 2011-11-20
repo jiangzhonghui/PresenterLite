@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:sap="http://schemas.android.com/apk/res/com.stylingandroid.presenterlite"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/display_background"
+        android:clipChildren="false"
+        android:clipToPadding="false" >
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipChildren="false"
+            android:clipToPadding="false" >
+
+            <com.stylingandroid.presenterlite.presentation.DisplayLayout
+                android:id="@+id/display"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:clipChildren="false"
+                android:clipToPadding="false"
+                sap:inAnimation="@anim/slideinright"
+                sap:outAnimation="@anim/slideoutleft"
+                android:padding="80dp"
+                sap:slides="slides.json"
+                android:visibility="visible" >
+            </com.stylingandroid.presenterlite.presentation.DisplayLayout>
+
+            <LinearLayout
+                android:id="@id/waiting"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center" 
+                android:visibility="gone">
+
+                <ProgressBar
+                    android:id="@+id/progressBar1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:indeterminate="true"
+                    android:padding="@dimen/padding" />
+
+                <TextView
+                    android:id="@+id/textView1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:padding="@dimen/padding"
+                    android:text="Waiting for controller..."
+                    android:textAppearance="?android:attr/textAppearanceLarge" />
+            </LinearLayout>
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:background="@drawable/header_default" >
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="-15dp"
+            android:layout_marginLeft="20dp"
+            android:padding="@dimen/padding"
+            android:text="Styling Android"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@android:color/white"
+            android:textSize="46sp" 
+            android:shadowColor="#80000000"
+            android:shadowDx="2.0"
+            android:shadowDy="2.0"
+            android:shadowRadius="3.5"/>
+    </RelativeLayout>
+
+</LinearLayout>
