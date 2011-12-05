@@ -3,10 +3,6 @@
     <declare-styleable name="DisplayTheme">
         <attr name="highlightCodeTextAppearance" format="reference"/>
     </declare-styleable>
-    <declare-styleable name="SlideLayout_Layout">
-        <attr format="integer" name="layout_phase" />
-        <attr format="reference" name="layout_animation" />
-    </declare-styleable>
     <declare-styleable name="SlideLayout">
         <attr format="string|reference" name="tweet" />
         <attr format="string|reference" name="notes" />

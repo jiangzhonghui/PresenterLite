@@ -49,6 +49,7 @@
             sap:pattern="(MarkIAllison)"
             sap:showAnimation="@anim/fadein"
             sap:showPhase="1"
+            android:visibility="invisible"
             android:text="Twitter: MarkIAllison" />
     </FrameLayout>
 

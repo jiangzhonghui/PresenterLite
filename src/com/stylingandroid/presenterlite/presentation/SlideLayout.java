@@ -12,8 +12,6 @@ import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.LinearLayout;
 
 public class SlideLayout extends LinearLayout
@@ -29,28 +27,6 @@ public class SlideLayout extends LinearLayout
 	private String tweet = null;
 	private String notes = null;
 	
-	
-	public static class LayoutParams extends android.widget.LinearLayout.LayoutParams
-	{
-		public int phase;
-		public Animation animation = null;
-
-		public LayoutParams( Context context, AttributeSet attrs )
-		{
-			super( LinearLayout.LayoutParams.FILL_PARENT, LinearLayout.LayoutParams.FILL_PARENT );
-			
-			TypedArray ta = context.obtainStyledAttributes( attrs, R.styleable.SlideLayout_Layout );
-			phase = ta.getInt( R.styleable.SlideLayout_Layout_layout_phase, 0 );
-			
-			int anim = ta.getResourceId( R.styleable.SlideLayout_Layout_layout_animation, -1 );
-			if( anim >= 0 )
-			{
-				animation = AnimationUtils.loadAnimation( context, anim );
-			}
-			ta.recycle();
-		}
-		
-	}
 	
 	public SlideLayout( Context context, AttributeSet attrs )
 	{
@@ -104,13 +80,6 @@ public class SlideLayout extends LinearLayout
 				tweetNotes.tweet( notes );
 			}
 		}
-	}
-	
-	@Override
-	public android.widget.LinearLayout.LayoutParams generateLayoutParams(
-			AttributeSet attrs )
-	{
-		return new LayoutParams( getContext(), attrs );
 	}
 	
 	private static void getPhases( ViewGroup parent, List<Phaseable> phaseables)
